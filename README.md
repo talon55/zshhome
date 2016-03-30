@@ -1,9 +1,8 @@
-Automagic Revinate Zsh Setup
+Automagic Zsh Setup
 ============================
 
 A prebuilt ZSH environment using sane defaults and some extra aliases to make
-the working in Revinate's environment easier. Note that my idea of "sane" may
-be different from yours.
+the working easier. Note that my idea of "sane" may be different from yours.
 
 Installation
 ------------
@@ -12,8 +11,7 @@ This config will work with the current stock version of zsh packaged with
 OS X 10.9.3 (zsh version 5.0.2) but should work with zsh installed using
 homebrew. Prezto requires at least version 4.3.11.
 
-  1. UnTar the zsh.tgz to ~/.zsh (which you should have done to even see
-     this README).
+  1. git clone git@github.com:saber3005/zshhome.git ~/.zsh
 
   2. Run the included setup script (~/.zsh/setup.sh)
 
