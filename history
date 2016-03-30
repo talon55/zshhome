@@ -1,0 +1,45 @@
+#   --------------------------------------o
+#   10. HISTORY
+#   ---------------------------------------
+
+    export HISTSIZE=100000                        # max events to save internally
+    export HISTFILE=${ZDOTDIR:-$HOME}/.zhistory   # path to the history file
+    setopt APPEND_HISTORY                         # append history file
+    unsetopt INC_APPEND_HISTORY                   # write to the history file immediately
+    setopt SHARE_HISTORY                          # share history between all sessions
+    setopt HIST_IGNORE_ALL_DUPS                   # delete old events in response to new duplicates
+    setopt HIST_IGNORE_SPACE                      # ignores commands with a preceding space
+
+    # Smarter history search
+    [[ -n "${key[PageUp]}"    ]]  && bindkey  "${key[PageUp]}"    history-beginning-search-backward
+    [[ -n "${key[PageDown]}"  ]]  && bindkey  "${key[PageDown]}"  history-beginning-search-forward
+
+#    # remove duplicates while preserving input order
+#    function dedup {
+#      awk '! x[$0]++' $@
+#    }
+#    # removes $HISTIGNORE commands from input
+#    function remove_histignore {
+#      if [ -n "$HISTIGNORE" ]; then
+#          # replace : with |, then * with .*
+#          local IGNORE_PAT=`echo "$HISTIGNORE" | sed s/\:/\|/g | sed s/\*/\.\*/g`
+#          # negated grep removes matches
+#          grep -vx "$IGNORE_PAT" $@
+#      else
+#          cat $@
+#      fi
+#    }
+#    # clean up the history file by remove duplicates and commands matching
+#    # $HISTIGNORE entries
+#    function history_cleanup {
+#      local HISTFILE_SRC=~/.bash_history
+#      local HISTFILE_DST=/tmp/.$USER.bash_history.clean
+#      if [ -f $HISTFILE_SRC ]; then
+#          \cp $HISTFILE_SRC $HISTFILE_SRC.backup
+#          dedup $HISTFILE_SRC | remove_histignore >| $HISTFILE_DST
+#          \mv $HISTFILE_DST $HISTFILE_SRC
+#          chmod go-r $HISTFILE_SRC
+#          history -c
+#          history -r
+#      fi
+#    }

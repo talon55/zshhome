@@ -1,0 +1,17 @@
+#   -------------------------------
+#   CUSTOM ZSH IMPORTS
+#   -------------------------------
+#   NOTE: Only include imports here.
+#     Commands and functions should be in the files referenced here.
+
+if [[ -s "${ZDOTDIR:-$HOME}/.zsh/utility" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zsh/utility"
+fi
+
+if [[ -s "${ZDOTDIR:-$HOME}/.zsh/history" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zsh/history"
+fi
+
+if [[ -s "${ZDOTDIR:-$HOME}/.zsh/custom" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zsh/custom"
+fi

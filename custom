@@ -1,0 +1,22 @@
+# ZSH customizations
+
+
+alias reload_zsh="source $HOME/.zshrc"
+alias composer="php -n /usr/local/bin/composer"
+alias docker_env="/Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
+
+# Custom Git shortcuts
+alias gph="git push heroku"
+alias grp="git pull --rebase && git push"
+alias gfu="git pull upstream master"
+alias gba="git branch -a"
+alias grm="git rebase master"
+
+# Necessary for php-version to work
+source $(brew --prefix php-version)/php-version.sh
+
+# Autocompletion for Lunchy
+LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
+  . $LUNCHY_DIR/lunchy-completion.zsh
+fi
