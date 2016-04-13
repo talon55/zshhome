@@ -5,7 +5,7 @@
 #   Set Paths
 #   ------------------------------------------------------------
     typeset -U path
-    path=(/usr/local/git/bin /usr/local /usr/local/sbin $path)
+    path=(/usr/local/go/bin /usr/local/git/bin /usr/local /usr/local/sbin $path)
 
 #   Set Default Editor
 #   ------------------------------------------------------------
