@@ -12,6 +12,10 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zsh/history" ]]; then
   source "${ZDOTDIR:-$HOME}/.zsh/history"
 fi
 
+if [[ -s "${ZDOTDIR:-$HOME}/.zsh/env" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zsh/env"
+fi
+
 if [[ -s "${ZDOTDIR:-$HOME}/.zsh/custom" ]]; then
   source "${ZDOTDIR:-$HOME}/.zsh/custom"
 fi
