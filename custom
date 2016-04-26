@@ -13,10 +13,14 @@ alias gba="git branch -a"
 alias grm="git rebase master"
 
 # Necessary for php-version to work
-source $(brew --prefix php-version)/php-version.sh
+if hash brew 2>/dev/null; then
+  source $(brew --prefix php-version)/php-version.sh
+fi
 
 # Autocompletion for Lunchy
-LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
-if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
-  . $LUNCHY_DIR/lunchy-completion.zsh
+if hash gem 2>/dev/null; then
+  LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+  if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
+    . $LUNCHY_DIR/lunchy-completion.zsh
+  fi
 fi
