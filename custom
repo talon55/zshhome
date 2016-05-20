@@ -40,3 +40,8 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+# Java quick-select
+use_java(){
+  export JAVA_HOME=`/usr/libexec/java_home -v $1`
+}
