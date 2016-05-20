@@ -13,7 +13,7 @@ alias gba="git branch -a"
 alias grm="git rebase master"
 
 # Necessary for php-version to work
-if hash brew 2>/dev/null; then
+if hash brew 2>/dev/null && [[ $(brew ls --versions php-version) != '' ]]; then
   source $(brew --prefix php-version)/php-version.sh
 fi
 
