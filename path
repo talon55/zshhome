@@ -1,0 +1,6 @@
+# ------------------------
+#   ZSH PATH CONFIGURATION
+# ------------------------
+
+typeset -U path
+path=(/usr/local/git/bin /usr/local /usr/local/sbin $path)

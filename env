@@ -4,8 +4,9 @@
 
 #   Set Paths
 #   ------------------------------------------------------------
-    typeset -U path
-    path=(/usr/local/git/bin /usr/local /usr/local/sbin $path)
+    if [[ -s "${ZDOTDIR:-$HOME}/.zsh/path" ]]; then
+      source "${ZDOTDIR:-$HOME}/.zsh/path"
+    fi
 
 #   Set Default Editor
 #   ------------------------------------------------------------
