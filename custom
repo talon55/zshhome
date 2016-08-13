@@ -4,13 +4,15 @@
 alias reload_zsh="source $HOME/.zshrc"
 alias composer="php -n /usr/local/bin/composer"
 alias docker_env="/Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
+alias dev="cd ~/dev/ptero/abcd-app"
 
 # Custom Git shortcuts
 alias gph="git push heroku"
 alias grp="git pull --rebase && git push"
 alias gfu="git pull upstream master"
 alias gba="git branch -a"
-alias grm="git rebase master"
+alias grm="git rebase develop"
+alias gmm="git merge develop"
 
 # Necessary for php-version to work
 if hash brew 2>/dev/null && [[ $(brew ls --versions php-version) != '' ]]; then
