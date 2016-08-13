@@ -3,4 +3,9 @@
 # ------------------------
 
 typeset -U path
-path=(/usr/local/git/bin /usr/local /usr/local/sbin $path)
+path=(
+  /usr/local/git/bin
+  /usr/local
+  /usr/local/sbin
+  $path # Must be last
+)
