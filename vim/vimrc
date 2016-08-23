@@ -1,0 +1,86 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+" Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9
+" Plugin 'user/L9', {'name': 'newL9'}
+
+" Custom Plugins:
+" Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Raimondi/delimitMate'
+Plugin 'vim-scripts/Auto-Pairs'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+" filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+filetype plugin on
+"
+" Brief help
+" :PluginList          - list configured plugins
+" :PluginInstall(!)    - install (update) plugins
+" :PluginSearch(!) foo - search (or refresh cache first) for foo
+" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+set number        " Turn on line numbers
+set expandtab     " 
+set tabstop=2     " Sets the tab size to 2
+set shiftwidth=2  " Sets the autoindent size
+set shiftround    " Intent to the nearest tabstop
+set autoindent    " Carries over previous indent to the next line
+set smarttab
+set smartindent
+set ml
+syntax on
+
+" Comment blocks of code.
+"   Commenting works in Normal mode (not insert mode)
+"   typing ',cc' comments the current line or any selected lines
+"   typing ',cu' uncomments the current line or any selected lines
+autocmd FileType c,cpp,java,php   let b:comment_leader = '// '
+autocmd FileType sh,ruby,python   let b:comment_leader = '# '
+autocmd FileType conf,fstab       let b:comment_leader = '# '
+autocmd FileType tex              let b:comment_leader = '% '
+autocmd FileType mail             let b:comment_leader = '> '
+autocmd FileType vim              let b:comment_leader = '" '
+noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+
+" Tab control
+map <C-t><up> :tabr<cr>
+map <C-t><down> :tabl<cr>
+map <C-t><left> :tabp<cr>
+map <C-t><right> :tabn<cr>
+map <C-t>c :tabnew<cr>:e<Space>.<cr>
+map <C-t>x :tabc<cr>
+map <C-t>" :tabs<cr>"
+
+" Set visual cue for line length
+let &colorcolumn=81
+" let colorcolumn=join(range(81,120),",")
+highlight ColorColumn ctermbg=7

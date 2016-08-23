@@ -1,0 +1,22 @@
+
+Setup Instructions for the basic Vim environment using Vundle
+
+Important: The vimrc is configured to autoinstall YouCompleteMe when setup.sh
+  is invoked. This requires some extra configuration (see below) and can be
+  stopped by commenting or removing line 30 from .vim/vimrc
+
+Steps:
+
+1. Preconfigure your system for YouCompleteMe (YCM) using the instructions here:
+  https://github.com/Valloric/YouCompleteMe#mac-os-x-super-quick-installation
+2. Invoke .vim/setup.sh
+3. Follow the post-install compilation steps for YCM.
+4. ???
+5. PROFIT!
+
+Notes:
+
+1. If you remove the line from the vimrc that installs YCM,
+  you can ignore steps 1 and three.
+2. The github page for Vundle (which is used in this environment) is available
+  from https://github.com/gmarik/Vundle.vim
