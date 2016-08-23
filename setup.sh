@@ -21,3 +21,6 @@ done
 # Create symlink to custom prompt theme
 ln -s "${ZDOTDIR:-$HOME}/.zsh/prompt_talon_setup" \
   "${ZDOTDIR:-$HOME}/.zprezto/modules/prompt/functions/prompt_talon_setup"
+
+# Run vim setup
+${ZDOTDIR:-$HOME}/.vim/setup.sh
