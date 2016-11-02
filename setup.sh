@@ -25,3 +25,8 @@ ln -s "${ZDOTDIR:-$HOME}/.zsh/prompt_talon_setup" \
 # Vim-specific setup
 ln -s "${ZDOTDIR:-$HOME}/.zsh/vim/vimrc" "${ZDOTDIR:-$HOME}/.vimrc"
 zsh "${ZDOTDIR:-$HOME}/.zsh/vim/setup.sh"
+
+# OSX-specific setup
+if [[ "$(uname -s)" == 'Darwin'  ]]; then
+  brew install reattach-to-user-namespace
+fi
