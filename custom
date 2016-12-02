@@ -11,6 +11,7 @@ alias grp="git pull --rebase && git push"
 alias gfu="git pull upstream master"
 alias gba="git branch -a"
 alias grm="git rebase master"
+alias gmm="git merge master"
 
 # Necessary for php-version to work
 if hash brew 2>/dev/null && [[ $(brew ls --versions php-version) != '' ]]; then
