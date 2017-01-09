@@ -29,6 +29,4 @@ fi
 enter_docker () { docker exec -it $1 bash }
 
 # shortcut function to run a docker container and open a shell in it
-spawn_docker () {
-  container_id=$(docker run -d ${1}) && enter_docker ${container_id}
-}
+spawn_docker () { docker run -it $1 bash }
