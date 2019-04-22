@@ -7,5 +7,6 @@ path=(
   /usr/local/git/bin
   /usr/local
   /usr/local/sbin
+  $HOME/.jenv/bin
   $path # Must be last
 )
