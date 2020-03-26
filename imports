@@ -20,6 +20,12 @@ if has_command docker; then
   source "${ZDOTDIR:-$HOME}/.zsh/docker/init.sh"
 fi
 
+# Custom aliases and functions
 if [[ -s "${ZDOTDIR:-$HOME}/.zsh/custom" ]]; then
   source "${ZDOTDIR:-$HOME}/.zsh/custom"
+fi
+
+# git command overrides
+if [[ -s "${ZDOTDIR:-$HOME}/.zsh/git" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zsh/git"
 fi
