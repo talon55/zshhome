@@ -8,5 +8,6 @@ path=(
   /usr/local
   /usr/local/sbin
   $HOME/.jenv/bin
+  /usr/local/opt/ruby/bin
   $path # Must be last
 )
