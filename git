@@ -1,17 +1,49 @@
 # git command enhancements
 
 git () {
-  if [[ $1 != "remaster" ]]; then
-    command git $@
+  if [[ $1 == "remaster" ]]; then
+    _remaster
     return
   fi
-  _remaster
+  command git $@
 }
 
 _remaster () {
-  echo "bash fn _remaster"
-  if ! git config --get alias.remaster > /dev/null 2>&1 ; then
-    git config --global alias.remaster '!f() { echo "remastering...";}; f'
+  # cd to project root
+  root=$(git rev-parse --show-toplevel)
+  if [[ "$root" != $(pwd) ]]; then
+    cd "$root"
   fi
-  command git remaster
+
+  git stash
+
+  git checkout master
+
+  # pull, supporting upstream
+  if git remote | grep upstream > /dev/null 2>&1; then
+    git fetch upstream -p \
+    && git reset --hard upstream/master \
+    && git push
+  else
+    git pull -p
+  fi
+
+  # delete merged branches
+  git branch --merged | grep -v "\*" | xargs -n 1 git branch -d;
+
+  # prune all remotes
+  for remote in $(git remote); do
+    git remote prune $remote
+  done
+
+  # update submodules, if applicable
+  if [[ -s .gitmodules ]]; then
+    git submodule update --init --recursive
+  fi
+
+  # optimize git
+  git gc
+
+  # display remaining branches, with details
+  git branch -vvv
 }
