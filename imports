@@ -30,6 +30,11 @@ if [[ -d "${ZDOTDIR:-$HOME}/.nvm" ]]; then
   source "${ZDOTDIR:-$HOME}/.zsh/nvm"
 fi
 
+# NVM Support
+if [[ -d "${ZDOTDIR:-$HOME}/.nvm" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zsh/nvm"
+fi
+
 if [[ -s "${ZDOTDIR:-$HOME}/.zsh/gcloudrc"  ]]; then
   source "${ZDOTDIR:-$HOME}/.zsh/gcloudrc"
 fi
