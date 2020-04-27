@@ -15,3 +15,7 @@ fi
 if [[ -s "${ZDOTDIR:-$HOME}/.zsh/imports" ]]; then
   source "${ZDOTDIR:-$HOME}/.zsh/imports"
 fi
+
+##########################
+# DON'T ADD TO THIS FILE #
+##########################
