@@ -15,6 +15,3 @@ fi
 if [[ -s "${ZDOTDIR:-$HOME}/.zsh/imports" ]]; then
   source "${ZDOTDIR:-$HOME}/.zsh/imports"
 fi
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-if which jenv > /dev/null; then eval "$(jenv init -)"; fi

@@ -32,6 +32,4 @@ enter_docker () { docker exec -it $1 bash }
 spawn_docker () { docker run -it $1 bash }
 
 # Initialize jenv (for selecting java versions)
-if command -v jenv >/dev/null 2>&1; then
-  eval "$(jenv init -)"
-fi
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
