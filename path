@@ -5,6 +5,7 @@
 typeset -U path
 path=(
   /usr/local/git/bin
+  $HOME/.zsh/git
   /usr/local
   /usr/local/sbin
   $HOME/.jenv/bin
