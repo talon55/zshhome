@@ -30,12 +30,16 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zsh/git" ]]; then
   source "${ZDOTDIR:-$HOME}/.zsh/git"
 fi
 
-# RVM Support
-if [[ -s "${ZDOTDIR:-$HOME}/.rvm/scripts/rvm" ]]; then
-  source "${ZDOTDIR:-$HOME}/.rvm/scripts/rvm"
-fi
-
 # NVM Support
 if [[ -d "${ZDOTDIR:-$HOME}/.nvm" ]]; then
   source "${ZDOTDIR:-$HOME}/.zsh/nvm"
+fi
+
+if [[ -s "${ZDOTDIR:-$HOME}/.zsh/gcloudrc"  ]]; then
+  source "${ZDOTDIR:-$HOME}/.zsh/gcloudrc"
+fi
+
+# RVM Support
+if [[ -s "${ZDOTDIR:-$HOME}/.rvm/scripts/rvm" ]]; then
+  source "${ZDOTDIR:-$HOME}/.rvm/scripts/rvm"
 fi
