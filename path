@@ -10,5 +10,8 @@ path=(
   /usr/local/sbin
   $HOME/.jenv/bin
   /usr/local/opt/ruby/bin
+  $HOME/.rvm/bin
+  $HOME/.local/bin
+  $HOME/Library/Android/sdk/platform-tools
   $path # Must be last
 )

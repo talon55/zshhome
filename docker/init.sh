@@ -7,8 +7,8 @@ if [[ ! -s "${ZDOTDIR:-$HOME}/.zsh/docker/completion"  ]]; then
     "${ZDOTDIR:-$HOME}/.zsh/docker/completion/_docker"
   ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.zsh-completion \
     "${ZDOTDIR:-$HOME}/.zsh/docker/completion/_docker-compose"
-  ln -s /Applications/Docker.app/Contents/Resources/etc/docker-machine.zsh-completion \
-    "${ZDOTDIR:-$HOME}/.zsh/docker/completion/_docker-machine"
+#  ln -s /Applications/Docker.app/Contents/Resources/etc/docker-machine.zsh-completion \
+#    "${ZDOTDIR:-$HOME}/.zsh/docker/completion/_docker-machine"
 fi
 
 # Clean out redundant zPrezto completion file

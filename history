@@ -2,13 +2,13 @@
 #   10. HISTORY
 #   ---------------------------------------
 
-    export HISTSIZE=100000                        # max events to save internally
-    export HISTFILE=${ZDOTDIR:-$HOME}/.zhistory   # path to the history file
-    setopt APPEND_HISTORY                         # append history file
-    unsetopt INC_APPEND_HISTORY                   # write to the history file immediately
-    setopt SHARE_HISTORY                          # share history between all sessions
-    setopt HIST_IGNORE_ALL_DUPS                   # delete old events in response to new duplicates
-    setopt HIST_IGNORE_SPACE                      # ignores commands with a preceding space
+    export HISTSIZE=100000                           # max events to save internally
+    export HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history   # path to the history file
+    setopt APPEND_HISTORY                            # append history file
+    unsetopt INC_APPEND_HISTORY                      # write to the history file immediately
+    setopt SHARE_HISTORY                             # share history between all sessions
+    setopt HIST_IGNORE_ALL_DUPS                      # delete old events in response to new duplicates
+    setopt HIST_IGNORE_SPACE                         # ignores commands with a preceding space
 
     # Smarter history search
     [[ -n "${key[PageUp]}"    ]]  && bindkey  "${key[PageUp]}"    history-beginning-search-backward

@@ -47,3 +47,6 @@ fi
 
 # kubectl autocompletion
 source <(kubectl completion zsh)
+
+# Android Home
+ANDROID_HOME=$HOME/Library/Android/sdk/
