@@ -13,5 +13,6 @@ path=(
   $HOME/.rvm/bin
   $HOME/.local/bin
   $HOME/Library/Android/sdk/platform-tools
+  $HOME/Library/Python/3.8/bin
   $path # Must be last
 )

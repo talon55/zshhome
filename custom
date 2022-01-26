@@ -44,7 +44,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # kubectl autocompletion
-source <(kubectl completion zsh)
+if command -v kubectl 1>/dev/null 2>&1; then
+  source <(kubectl completion zsh)
+fi
 
 # Android Home
 ANDROID_HOME=$HOME/Library/Android/sdk/
