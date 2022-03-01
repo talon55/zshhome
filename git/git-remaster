@@ -16,7 +16,7 @@ git checkout master
 if git remote | grep upstream > /dev/null 2>&1; then
 git fetch upstream -p \
 && git reset --hard upstream/master \
-&& git push
+&& git push --no-verify
 else
 git pull -p
 fi
