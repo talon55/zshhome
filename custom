@@ -5,8 +5,6 @@ alias reload_zsh="source $HOME/.zshrc"
 alias composer="php -n /usr/local/bin/composer"
 alias docker_env="/Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
 alias dev="cd ~/dev"
-alias db_console="psql -h guc3-beanstalkrootsapidb-a-qtk1 beanstalk_prod bs_prod"
-alias db_console_stage="psql -h guc3-beanstalkrootsapidbstage-a-4zwf beanstalk_prod bs_prod"
 
 # Custom Git shortcuts
 alias gph="git push heroku"
@@ -55,7 +53,3 @@ ANDROID_HOME=$HOME/Library/Android/sdk/
 source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
-# SPT CLI Config
-spt() {
-  (cd $(git rev-parse --show-toplevel) && ./tools/sptcli/src/sptcli.py "$@";)
-}
