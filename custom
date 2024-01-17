@@ -33,9 +33,6 @@ enter_docker () { docker exec -it $1 bash }
 # shortcut function to run a docker container and open a shell in it
 spawn_docker () { docker run -it $1 bash }
 
-# Initialize jenv (for selecting java versions)
-if which jenv > /dev/null; then eval "$(jenv init -)"; fi
-
 # Init pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
@@ -47,9 +44,13 @@ if command -v kubectl 1>/dev/null 2>&1; then
 fi
 
 # Android Home
-ANDROID_HOME=$HOME/Library/Android/sdk/
+# ANDROID_HOME=$HOME/Library/Android/sdk/
 
 # Autocomplete for gcloud
 # source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 # source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+
+# SDKMAN Support
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
