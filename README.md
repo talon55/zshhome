@@ -11,7 +11,7 @@ This config will work with the current stock version of zsh packaged with
 OS X 10.9.3 (zsh version 5.0.2) but should work with zsh installed using
 homebrew. Prezto requires at least version 4.3.11.
 
-  1. git clone git@github.com:saber3005/zshhome.git ~/.zsh
+  1. git clone git@github.com:talon55/zshhome.git ~/.zsh
 
   2. Run the included setup script (~/.zsh/setup.sh)
 
