@@ -35,7 +35,9 @@ spawn_docker () { docker run -it $1 bash }
 
 # Init pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
+  export PYENV_ROOT="$HOME/.pyenv"
   eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
 fi
 
 # kubectl autocompletion

@@ -9,7 +9,8 @@ path=(
   /usr/local
   /usr/local/sbin
   /usr/local/opt/ruby/bin
-  $HOME/.rvm/bin
+  $HOME/.rvm/bin # rvm support
   $HOME/.local/bin
+  $HOME/.pyenv/bin # pyenv support
   $path # Must be last
 )
