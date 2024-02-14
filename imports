@@ -16,9 +16,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zsh/env" ]]; then
   source "${ZDOTDIR:-$HOME}/.zsh/env"
 fi
 
-if has_command docker; then
-  source "${ZDOTDIR:-$HOME}/.zsh/docker/init.sh"
-fi
+# if has_command docker; then
+#  source "${ZDOTDIR:-$HOME}/.zsh/docker/init.sh"
+# fi
 
 # Custom aliases and functions
 if [[ -s "${ZDOTDIR:-$HOME}/.zsh/custom" ]]; then
