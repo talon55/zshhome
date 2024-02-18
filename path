@@ -12,5 +12,6 @@ path=(
   $HOME/.rvm/bin # rvm support
   $HOME/.local/bin
   $HOME/.pyenv/bin # pyenv support
+  $HOME/.yarn/bin # yarn global packages
   $path # Must be last
 )
