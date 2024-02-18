@@ -13,5 +13,7 @@ path=(
   $HOME/.local/bin
   $HOME/.pyenv/bin # pyenv support
   $HOME/.yarn/bin # yarn global packages
+  # VS Code shortcut commands
+  /mnt/c/Users/edmad/AppData/Local/Programs/Microsoft\ VS\ Code/bin
   $path # Must be last
 )
