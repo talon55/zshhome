@@ -20,7 +20,7 @@ fi
 fpath=($fpath "${ZDOTDIR:-$HOME}/.zsh/docker/completion/")
 
 # Re-init autocomplete with new files
-autoload -Uz compinit && compinit -i
+export load_compinit=true
 
 # Set some options
 zstyle ':completion:*:*:docker:*' option-stacking yes
