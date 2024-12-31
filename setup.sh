@@ -30,3 +30,11 @@ zsh "${ZDOTDIR:-$HOME}/.zsh/vim/setup.sh"
 if [[ "$(uname -s)" == 'Darwin'  ]]; then
   brew install reattach-to-user-namespace
 fi
+
+# WSL-specific setup
+# WSL detection based on https://superuser.com/a/1749811
+if [[ -f "/proc/sys/fs/binfmt_misc/WSLInterop"]]; then
+  sudo add-apt-repository ppa:wslutilities/wslu
+  sudo apt update
+  sudo apt install wslu
+fi

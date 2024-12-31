@@ -14,3 +14,19 @@ path=(
   $HOME/.pyenv/bin # pyenv support
   $path # Must be last
 )
+
+# WSL-specific path additions
+# It turns out this isn't necessary since wslu includes windows PATH,
+# but I did the work of figuring out how to do this, so I'm saving it
+# in case I need anything like it in the future.
+
+# if has_command wslpath && has_command wslvar; then
+#   # VSCode shell shortcut
+#   vsc_bin="$(wslpath "$(wslvar -l Local AppData)")/Programs/Microsoft VS Code/bin"
+#   if [[ -d "$vsc_bin" ]]; then
+#     path=(
+#       $vsc_bin
+#       $path
+#     )
+#   fi
+# fi
