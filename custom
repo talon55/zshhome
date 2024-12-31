@@ -60,6 +60,10 @@ fi
 
 # ASDF Version Manager support
 if [ -f "$HOME/.asdf/asdf.sh" ]; then
+  # Golang-specific environment variable
+  export ASDF_GOLANG_MOD_VERSION_ENABLED=true # Must be set before source asdf
+
+  # General ASDF config
   . "$HOME/.asdf/asdf.sh"
   fpath=(${ASDF_DIR}/completions $fpath)
   export load_compinit=true
