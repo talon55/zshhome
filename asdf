@@ -1,0 +1,20 @@
+# ASDF Version Manager support
+
+# Get asdf.sh location
+if hash brew 2>/dev/null && brew list --versions asdf &>/dev/null; then
+  asdf="$(brew --prefix asdf)/libexec/asdf.sh"
+elif [[ -f "$HOME/.asdf/asdf.sh" ]]; then
+  asdf="$HOME/.asdf/asdf.sh"
+fi
+
+# Source asdf.sh
+if [[ $asdf ]]; then
+  # Golang-specific environment variable
+  export ASDF_GOLANG_MOD_VERSION_ENABLED=true # Must be set before source asdf
+
+  echo "Sourcing $asdf"
+  # General ASDF config
+  . "$asdf"
+  fpath=(${ASDF_DIR}/completions $fpath)
+  export load_compinit=true
+fi

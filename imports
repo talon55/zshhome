@@ -38,3 +38,8 @@ fi
 if [[ -s "${ZDOTDIR:-$HOME}/.rvm/scripts/rvm" ]]; then
   source "${ZDOTDIR:-$HOME}/.rvm/scripts/rvm"
 fi
+
+# ASDF Support
+if [[ -s "${ZDOTDIR:-$HOME}/.zsh/asdf" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zsh/asdf"
+fi

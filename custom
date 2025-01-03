@@ -14,10 +14,6 @@ alias gba="git branch -a"
 alias grm="git rebase master"
 alias gmm="git merge master"
 
-# Necessary for php-version to work
-if hash brew 2>/dev/null && [[ $(brew ls --versions php-version) != '' ]]; then
-  source $(brew --prefix php-version)/php-version.sh
-fi
 
 # Autocompletion for Lunchy
 if hash gem 2>/dev/null && gem which lunchy 2>/dev/null; then
@@ -56,16 +52,5 @@ fi
 if [ -d "$HOME/.sdkman" ]; then
   export SDKMAN_DIR="$HOME/.sdkman"
   [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
-fi
-
-# ASDF Version Manager support
-if [ -f "$HOME/.asdf/asdf.sh" ]; then
-  # Golang-specific environment variable
-  export ASDF_GOLANG_MOD_VERSION_ENABLED=true # Must be set before source asdf
-
-  # General ASDF config
-  . "$HOME/.asdf/asdf.sh"
-  fpath=(${ASDF_DIR}/completions $fpath)
-  export load_compinit=true
 fi
 
