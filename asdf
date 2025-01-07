@@ -12,7 +12,6 @@ if [[ $asdf ]]; then
   # Golang-specific environment variable
   export ASDF_GOLANG_MOD_VERSION_ENABLED=true # Must be set before source asdf
 
-  echo "Sourcing $asdf"
   # General ASDF config
   . "$asdf"
   fpath=(${ASDF_DIR}/completions $fpath)
