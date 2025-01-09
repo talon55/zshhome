@@ -43,3 +43,8 @@ fi
 if [[ -s "${ZDOTDIR:-$HOME}/.zsh/asdf" ]]; then
   source "${ZDOTDIR:-$HOME}/.zsh/asdf"
 fi
+
+# Custom SmithRx commands
+if [[ -s "${ZDOTDIR:-$HOME}/.zsh/smithrx" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zsh/smithrx"
+fi
