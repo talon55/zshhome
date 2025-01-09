@@ -9,8 +9,13 @@ fi
 
 # Source asdf.sh
 if [[ $asdf ]]; then
-  # Golang-specific environment variable
-  export ASDF_GOLANG_MOD_VERSION_ENABLED=true # Must be set before source asdf
+  # ASDF environment variables must be set before sourcing ASDF
+
+  # Golang-specific environment variables
+  export ASDF_GOLANG_MOD_VERSION_ENABLED=true
+
+  # NodeJS-specific environment variables
+  export ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY=latest_available
 
   # General ASDF config
   . "$asdf"
