@@ -1,0 +1,5 @@
+# SmithRx-related commands
+
+# Required for Forge
+ulimit -n 65536
+ulimit -f unlimited
