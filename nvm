@@ -1,7 +1,23 @@
 # NVM Support
 
 export NVM_DIR="${ZDOTDIR:-$HOME}/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Make the directory if it doesn't exist
+[[ -d "$NVM_DIR" ]] || mkdir "$NVM_DIR"
+
+# Get nvm.sh location
+if hash brew 2>/dev/null && brew list --versions nvm &>/dev/null; then
+  nvm="$(brew --prefix nvm)/nvm.sh"
+  comp="$(brew --prefix nvm)/etc/bash_completion.d/nvm"
+elif [[ -f "$NVM_DIR/nvm.sh" ]]; then
+  nvm="$NVM_DIR/nvm.sh"
+  comp="$NVM_DIR/bash_completion"
+else
+  return
+fi
+
+# Load nvm
+[[ -s "$nvm" ]] && \. "$nvm"
 
 # place this after nvm initialization
 autoload -U add-zsh-hook
@@ -17,4 +33,6 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Load bash completion
+[[ -s "$comp" ]] && \. "$comp"
