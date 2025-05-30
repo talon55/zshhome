@@ -12,6 +12,7 @@ path=(
   $HOME/.rvm/bin # rvm support
   $HOME/.local/bin
   $HOME/.pyenv/bin # pyenv support
+  $HOME/go/bin # Go binaries
   $path # Must be last
 )
 
