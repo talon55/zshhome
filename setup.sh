@@ -1,10 +1,13 @@
 #!/usr/bin/env zsh
 
+set -e
+setopt EXTENDED_GLOB
+
+
 # Pull down the Prezto repo from Github
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 # Autogenerate symlinks to default rcfiles
-setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
     ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
@@ -28,7 +31,7 @@ zsh "${ZDOTDIR:-$HOME}/.zsh/vim/setup.sh"
 
 # OSX-specific setup
 if [[ "$(uname -s)" == 'Darwin'  ]]; then
-  brew install reattach-to-user-namespace
+  install_brew_package reattach-to-user-namespace
 fi
 
 # WSL-specific setup
@@ -38,3 +41,51 @@ if [[ -f "/proc/sys/fs/binfmt_misc/WSLInterop"]]; then
   sudo apt update
   sudo apt install wslu
 fi
+
+# Helper function to install a package using Homebrew
+install_brew_package() {
+  local package="$1"
+
+  if [[ "$(uname -s)" != 'Darwin' ]]; then
+    echo "This script is intended for MacOS only."
+    exit 1
+  fi
+
+  # Since this script sets up the local environment, we can't assume Homebrew is installed or on the PATH.
+  if [[ command -v brew &> /dev/null ]]; then
+    brew="brew"
+  else if [[ -x /opt/homebrew/bin/brew ]]; then
+    brew="/opt/homebrew/bin/brew"
+  else
+    echo "Homebrew is not installed."
+    if ! install_homebrew; then
+      echo "This script requires Homebrew to be installed."
+      exit 1
+    fi
+    install_brew_package "$package" # Retry after installing Homebrew
+    return
+  fi
+
+  if ! $brew list "$package" &> /dev/null; then
+    echo "Installing $package..."
+    $brew install "$package"
+  else
+    echo "$package is already installed."
+  fi
+}
+
+install_homebrew() {
+  if [[ "$(uname -s)" != 'Darwin' ]]; then
+    echo "This script is intended for MacOS only."
+    exit 1
+  fi
+
+  read -p "Install Homebrew? (Y/N): " confirm
+  if [[ $confirm != [yY] && $confirm != [yY][eE][sS] ]]; then
+    echo "Homebrew installation aborted."
+    return 1
+  fi
+
+  echo "Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+}
