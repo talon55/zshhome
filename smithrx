@@ -4,4 +4,3 @@
 ulimit -n 65536
 ulimit -f unlimited
 export GOPRIVATE=github.com/smithhealth,github.com/SmithHealth
-export DESCOPE_MANAGEMENT_KEY="op://Admin Developers/Descope - Portal API User Management Keys/local-smrx-dev"
