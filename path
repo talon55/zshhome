@@ -13,6 +13,7 @@ path=(
   $HOME/.local/bin
   $HOME/.pyenv/bin # pyenv support
   $HOME/go/bin # Go binaries
+  /Library/Frameworks/Python.framework/Versions/Current/bin # Python binaries
   $path # Must be last
 )
 
