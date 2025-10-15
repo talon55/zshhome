@@ -25,3 +25,4 @@ export load_compinit=true
 # Set some options
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
+zstyle ':completion:*' menu select

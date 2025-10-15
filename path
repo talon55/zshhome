@@ -8,6 +8,7 @@ path=(
   $HOME/.zsh/git
   /usr/local
   /usr/local/sbin
+  $HOME/.zfunc
   /usr/local/opt/ruby/bin
   $HOME/.rvm/bin # rvm support
   $HOME/.local/bin
