@@ -15,6 +15,9 @@ alias gba="git branch -a"
 alias grm="git rebase master"
 alias gmm="git merge master"
 
+# Alias for granted's assume command
+alias assume=". assume"
+
 
 # Autocompletion for Lunchy
 if hash gem 2>/dev/null && gem which lunchy 2>/dev/null; then

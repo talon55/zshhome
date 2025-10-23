@@ -18,7 +18,12 @@ path=(
   $path # Must be last
 )
 
+# Docker completions
 fpath=(/Users/edm/.docker/completions $fpath)
+
+# Granted and Assume completions
+fpath=(/Users/edm/.dgranted/zsh_autocomplete/assume/ $fpath)
+fpath=(/Users/edm/.dgranted/zsh_autocomplete/granted/ $fpath)
 
 # WSL-specific path additions
 # It turns out this isn't necessary since wslu includes windows PATH,
