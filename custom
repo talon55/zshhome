@@ -12,6 +12,9 @@ alias gph="git push heroku"
 alias grp="git pull --rebase && git push"
 alias gfu="git pull upstream master"
 alias gba="git branch -a"
+alias gbp="git branch --merged | grep -vE \"(^\\*|main|master|dev)\" | xargs git branch -d" # prune merged branches
+alias gbP="git branch | grep -vE \"(^\\*|main|master|dev)\" | xargs git branch -d" # prune all local branches except main, master, dev
+alias gbPF="git branch | grep -vE \"(^\\*|main|master|dev)\" | xargs git branch -D" # force prune all local branches except main, master, dev
 alias grm="git rebase master"
 alias gmm="git merge master"
 
