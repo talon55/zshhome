@@ -15,6 +15,7 @@ path=(
   $HOME/.pyenv/bin # pyenv support
   $HOME/go/bin # Go binaries
   /Library/Frameworks/Python.framework/Versions/Current/bin # Python binaries
+  $HOME/.yarn/bin # yarn global packages
   $path # Must be last
 )
 
