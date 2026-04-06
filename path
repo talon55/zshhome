@@ -16,6 +16,8 @@ path=(
   $HOME/go/bin # Go binaries
   /Library/Frameworks/Python.framework/Versions/Current/bin # Python binaries
   $HOME/.yarn/bin # yarn global packages
+  # VS Code shortcut commands
+  /mnt/c/Users/edmad/AppData/Local/Programs/Microsoft\ VS\ Code/bin
   $path # Must be last
 )
 
