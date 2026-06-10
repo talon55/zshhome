@@ -4,3 +4,6 @@
 
 # Set WSL default browser
 export BROWSER=wslview
+
+# Use default docker context in WSL
+export DOCKER_CONTEXT=default
