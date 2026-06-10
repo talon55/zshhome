@@ -63,9 +63,6 @@ if [[ -f "/opt/homebrew/bin/brew"  ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# Set WSL default browser
-export BROWSER=wslview
-
 # Perl local::lib support
 if [ -d "$HOME/perl5" ]; then
   PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;

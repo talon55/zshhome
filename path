@@ -16,15 +16,22 @@ path=(
   $HOME/go/bin # Go binaries
   /Library/Frameworks/Python.framework/Versions/Current/bin # Python binaries
   $HOME/.yarn/bin # yarn global packages
-  $HOME/perl5/bin
-  # VS Code shortcut commands
-  /mnt/c/Users/edmad/AppData/Local/Programs/Microsoft\ VS\ Code/bin
+  $HOME/perl5/bin # Perl local::lib support
   $path # Must be last
 )
 
 fpath=(/Users/edm/.docker/completions $fpath)
 
 # WSL-specific path additions
+
+if is_wsl; then
+  path=(
+    # VS Code shortcut commands
+    /mnt/c/Users/edmad/AppData/Local/Programs/Microsoft\ VS\ Code/bin
+    $path
+  )
+fi
+
 # It turns out this isn't necessary since wslu includes windows PATH,
 # but I did the work of figuring out how to do this, so I'm saving it
 # in case I need anything like it in the future.
