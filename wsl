@@ -1,0 +1,6 @@
+# ----------------------------------------
+#   WSL-Specific configuration for ZSH
+# ----------------------------------------
+
+# Set WSL default browser
+export BROWSER=wslview

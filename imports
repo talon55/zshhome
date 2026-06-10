@@ -16,8 +16,23 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zsh/env" ]]; then
   source "${ZDOTDIR:-$HOME}/.zsh/env"
 fi
 
-if has_command docker; then
-  source "${ZDOTDIR:-$HOME}/.zsh/docker/init.sh"
+# if has_command docker; then
+#  source "${ZDOTDIR:-$HOME}/.zsh/docker/init.sh"
+# fi
+
+# OS-specific imports
+if is_macos; then
+  if [[ -s "${ZDOTDIR:-$HOME}/.zsh/macos" ]]; then
+    source "${ZDOTDIR:-$HOME}/.zsh/macos"
+  fi
+elif is_wsl; then
+  if [[ -s "${ZDOTDIR:-$HOME}/.zsh/wsl" ]]; then
+    source "${ZDOTDIR:-$HOME}/.zsh/wsl"
+  fi
+else
+  if [[ -s "${ZDOTDIR:-$HOME}/.zsh/linux" ]]; then
+    source "${ZDOTDIR:-$HOME}/.zsh/linux"
+  fi
 fi
 
 # Custom aliases and functions
