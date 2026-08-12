@@ -1,0 +1,11 @@
+# ----------------------------------------
+#   Mac OS-Specific configuration for ZSH
+# ----------------------------------------
+
+# Set up Homebrew Shell Env
+eval "$(brew shellenv)"
+
+# Manually link libpq
+if [[ -d /opt/homebrew/opt/libpq/bin ]]; then
+    export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+fi

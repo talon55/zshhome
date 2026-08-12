@@ -19,6 +19,21 @@ fi
 # Load nvm
 [[ -s "$nvm" ]] && \. "$nvm"
 
+# Prezto's completion module turns on EXTENDED_GLOB (for compinit's glob
+# modifiers), which stays on for the rest of the shell. nvm.sh's nvm_alias()
+# strips comments with `${line%%#*}`, and under EXTENDED_GLOB zsh treats
+# `#*` as an invalid glob-repetition pattern ("bad pattern: #*"), so alias
+# resolution (e.g. `nvm use default`) silently fails. Wrap the entry point
+# so every nvm call (and everything it calls internally) runs with the
+# option off, without disabling it shell-wide.
+if (( $+functions[nvm] )); then
+  functions[__nvm_orig]=$functions[nvm]
+  nvm() {
+    setopt local_options no_extended_glob
+    __nvm_orig "$@"
+  }
+fi
+
 # place this after nvm initialization
 autoload -U add-zsh-hook
 load-nvmrc() {

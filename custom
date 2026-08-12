@@ -70,3 +70,8 @@ if [ -d "$HOME/perl5" ]; then
   PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
   PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 fi
+
+# OrbStack: command-line tools and integration
+if [ -f ~/.orbstack/shell/init.zsh ]; then
+  source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+fi
