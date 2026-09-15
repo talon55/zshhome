@@ -14,7 +14,6 @@ path=(
   $HOME/.local/bin
   $HOME/.pyenv/bin # pyenv support
   $HOME/go/bin # Go binaries
-  /Library/Frameworks/Python.framework/Versions/Current/bin # Python binaries
   $HOME/.yarn/bin # yarn global packages
   $HOME/perl5/bin # Perl local::lib support
   $path # Must be last

@@ -2,6 +2,13 @@
 #   Mac OS-Specific configuration for ZSH
 # ----------------------------------------
 
+path=(
+    $HOME/Library/pnpm
+    $HOME/Library/pnpm/bin
+    /Library/Frameworks/Python.framework/Versions/Current/bin # Python binaries
+    $path
+)
+
 # Set up Homebrew Shell Env
 eval "$(brew shellenv)"
 
@@ -9,3 +16,11 @@ eval "$(brew shellenv)"
 if [[ -d /opt/homebrew/opt/libpq/bin ]]; then
     export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 fi
+
+export PNPM_HOME='/Users/edm/Library/pnpm'
+# Path manipulation to ensure pnpm binaries are in the PATH; from `pnpm setup`
+# Remove after adapting config to other envs
+# case ":$PATH:" in
+#   *":$PNPM_HOME/bin:"*) ;;
+#   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+# esac
