@@ -45,6 +45,11 @@ if command -v kubectl 1>/dev/null 2>&1; then
   source <(kubectl completion zsh)
 fi
 
+# Granted: assume must be sourced to export credentials into the current shell
+if has_command assume; then
+  alias assume="source assume"
+fi
+
 # Android Home
 # ANDROID_HOME=$HOME/Library/Android/sdk/
 
